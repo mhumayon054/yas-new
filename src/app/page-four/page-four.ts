@@ -24,23 +24,23 @@ export default class PageFour {
 
   ];
   images2 = [
-    'assets/t11.webp',
-    'assets/t12.webp',
-    'assets/t13.webp',
-    'assets/t14.webp',
+    'https://ik.imagekit.io/5sbqruotr/t11.webp',
+    'https://ik.imagekit.io/5sbqruotr/t12.webp',
+    'https://ik.imagekit.io/5sbqruotr/t13.webp',
+    'https://ik.imagekit.io/5sbqruotr/t14.webp',
 
 
   ];
   images3 = [
-    'assets/b11.webp',
-    'assets/b12.webp',
-    'assets/b13.webp',
-    'assets/b14.webp',
-    'assets/b15.webp',
-    'assets/b16.webp',
-    'assets/b17.webp',
-    'assets/b18.webp',
-   'assets/b19.webp',
+    'https://ik.imagekit.io/5sbqruotr/b11.webp',
+    'https://ik.imagekit.io/5sbqruotr/b12.webp',
+    'https://ik.imagekit.io/5sbqruotr/b13.webp',
+    'https://ik.imagekit.io/5sbqruotr/b14.webp',
+    'https://ik.imagekit.io/5sbqruotr/b15.webp',
+    'https://ik.imagekit.io/5sbqruotr/b16.webp',
+    'https://ik.imagekit.io/5sbqruotr/b17.webp',
+    'https://ik.imagekit.io/5sbqruotr/b18.webp',
+   'https://ik.imagekit.io/5sbqruotr/b19.webp',
 
 
   ];
