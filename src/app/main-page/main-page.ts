@@ -54,7 +54,7 @@ export class MainPage implements AfterViewInit, OnInit {
     },
     ar: {
       label: 'للعربية',
-      flag: 'assets/download.jpeg',
+      flag: 'https://ik.imagekit.io/5sbqruotr/download.jpeg',
     },
   };
 
