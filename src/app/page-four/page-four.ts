@@ -16,10 +16,10 @@ import { Router } from '@angular/router';
 export default class PageFour {
   constructor(private route: Router) {}
   images = [
-    'assets/c11.webp',
-    'assets/c12.webp',
-    'assets/c13.webp',
-    'assets/c14.webp',
+    'https://ik.imagekit.io/5sbqruotr/looks/Look-7.1-768x1152.jpeg.webp',
+    'https://ik.imagekit.io/5sbqruotr/looks/Look-9.1-768x1152.jpeg.webp',
+    'https://ik.imagekit.io/5sbqruotr/looks/Look-12.1-scaled.jpeg.webp',
+    'https://ik.imagekit.io/5sbqruotr/looks/Look-10.1-scaled.jpeg',
 
 
   ];
