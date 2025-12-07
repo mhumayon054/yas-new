@@ -320,7 +320,7 @@ export class SliderFour implements OnInit, OnChanges, OnDestroy {
   slidesToShow = 4;
   private resizeListener: () => void = () => {};
 
-  private imagesToRemove = [6, 7, 11];
+  // private imagesToRemove = [6, 7, 11];
 
   ngOnInit() {
     this.updateSlidesToShow();
@@ -363,9 +363,9 @@ export class SliderFour implements OnInit, OnChanges, OnDestroy {
     const mapped: SlideImage[] = [];
 
     this.imagesArry.forEach((item: any, originalIndex: number) => {
-      if (this.imagesToRemove.includes(originalIndex)) {
-        return;
-      }
+      // if (this.imagesToRemove.includes(originalIndex)) {
+      //   return;
+      // }
 
       let defaultUrl = '';
       let hoverUrl = '';
