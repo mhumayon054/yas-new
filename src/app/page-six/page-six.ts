@@ -44,7 +44,7 @@ export class PageSix {
     {
       name: 'LOOK 5',
       img: 'https://ik.imagekit.io/5sbqruotr/looks/Look-4.1-scaled.jpeg.webp',
-      img2: 'assets/looks/look-4.2-600x900.jpeg.webp',
+      img2: 'https://ik.imagekit.io/5sbqruotr/looks/look-4.2-600x900.jpeg.webp?updatedAt=1765113145374',
       text: 'Nude tulle gown embroidered with multicolor crystals, beads, and sequins in a geometric mosaic motif – featuring a high neckline, daring thigh-high slits, and sheer navy blue tulle long sleeves.'
     ,showSecondImage: true,
     },
