@@ -15,17 +15,17 @@ import { Router } from '@angular/router';
 export class PageTwo {
   constructor(private route: Router) {}
   images = [
-    'assets/j11.webp',
+    'https://ik.imagekit.io/5sbqruotr/megamenuimages/j11.webp',
     'https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1469.jpg?updatedAt=1764628074370',
     'https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1582-scaled.jpg.webp?updatedAt=1764628074465',
     // 'assets/j14.webp',
     'https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1513-scaled-1-1.jpg.webp?updatedAt=1764628074522',
   ];
   images2 = [
-    'assets/j11.webp',
+    'https://ik.imagekit.io/5sbqruotr/megamenuimages/j11.webp',
     'https://ik.imagekit.io/ozrxwulka/3C8A1469%20(2).jpg?updatedAt=1758795423814',
     'https://ik.imagekit.io/ozrxwulka/3C8A1513%20(3).jpg?updatedAt=1758792380383',
-    'assets/j14.webp',
+    'https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1582-scaled.jpg.webp?updatedAt=1764628074465',
     // 'assets/3C8A1513-scaled-1-1.jpg.webp',
   ];
   moveNext(id: string) {
