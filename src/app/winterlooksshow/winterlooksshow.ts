@@ -27,7 +27,7 @@ export class WinterLooksshow implements OnInit {
   // 👉 jo look abhi ENQUIRE NOW section ke slider me active hai
   selectedIndex = 0;
 
-    @ViewChild('enquireSection') enquireSection!: ElementRef<HTMLDivElement>;
+  @ViewChild('enquireSection') enquireSection!: ElementRef<HTMLDivElement>;
 
   receivedImage = "";
   receivedText = "";
@@ -38,8 +38,7 @@ export class WinterLooksshow implements OnInit {
   heroVideoUrl =
     "https://ik.imagekit.io/ozrxwulka/FallWinterVideos/fw-hero.mp4?updatedAt=1758745273304";
 
-  // ye hamesha hide rehne wale indexes (agar koi special reason hai)
-  private imagesToRemove = [7, 13];
+  // ❌ imagesToRemove hatadia
   filteredPictures: string[] = [];
 
   constructor(private router: Router) {
@@ -87,16 +86,19 @@ export class WinterLooksshow implements OnInit {
 
     const pictures = this.getImages(newLook);
 
-    // jo indexes neeche slider se hide honge
-    const hiddenIndexes = new Set<number>([...this.imagesToRemove, index]);
-
+    // 🔥 ab sirf current index (agar chaho to) hide kar sakte ho
     const allpictures = this.fullList.map((product: any, idx: number) => {
-      if (hiddenIndexes.has(idx)) {
-        // empty object → SliderFour.prepareImages isko ignore karega
+      // agar neeche wale slider me current look bhi dikhana hai,
+      // to ye condition bhi hata sakte ho:
+      if (idx === index) {
         return { img: "", img2: "", name: "", text: "" };
       }
       return product;
     });
+
+    // agar current look bhi show karna hai neeche,
+    // to upar wali map ko simple aise karo:
+    // const allpictures = this.fullList;
 
     this.item = {
       allpictures,
@@ -116,15 +118,15 @@ export class WinterLooksshow implements OnInit {
   }
 
   scrollToEnquire() {
-  if (this.enquireSection?.nativeElement) {
-    this.enquireSection.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (this.enquireSection?.nativeElement) {
+      this.enquireSection.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
-}
 
   handleTrueClick(event: { flag: boolean; message: string }) {
     const origval = event.message || "";

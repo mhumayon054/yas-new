@@ -27,7 +27,7 @@ export class SummerLooksshow implements OnInit {
   // 👉 NEW
   selectedIndex = 0;
 
-      @ViewChild('enquireSection') enquireSection!: ElementRef<HTMLDivElement>;
+  @ViewChild('enquireSection') enquireSection!: ElementRef<HTMLDivElement>;
 
   receivedImage = "";
   receivedText = "";
@@ -38,8 +38,7 @@ export class SummerLooksshow implements OnInit {
   heroVideoUrl =
     "https://ik.imagekit.io/5sbqruotr/heroSectionVideos/Teaser_1_FC.mp4?updatedAt=1764610102532";
 
-  // ye ab "always hide" wale looks hai, jaise pehle 7,13
-  private imagesToRemove = [7, 13];
+  // ❌ imagesToRemove hatadia
   filteredPictures: string[] = [];
 
   constructor(private router: Router) {
@@ -84,15 +83,18 @@ export class SummerLooksshow implements OnInit {
 
     const pictures = this.getImages(newLook);
 
-    const hiddenIndexes = new Set<number>([...this.imagesToRemove, index]);
-
+    // 🔥 ab koi fixed index hide nahi ho raha
     const allpictures = this.fullList.map((product: any, idx: number) => {
-      if (hiddenIndexes.has(idx)) {
-        // empty object → SliderFour.prepareImages isko skip karega
+      // agar current look ko bhi neeche show karna hai,
+      // to ye condition hata do:
+      if (idx === index) {
         return { img: "", img2: "", name: "", text: "" };
       }
       return product;
     });
+
+    // agar current look bhi show karna hai:
+    // const allpictures = this.fullList;
 
     this.item = {
       allpictures,
@@ -111,15 +113,15 @@ export class SummerLooksshow implements OnInit {
   }
 
   scrollToEnquire() {
-  if (this.enquireSection?.nativeElement) {
-    this.enquireSection.nativeElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (this.enquireSection?.nativeElement) {
+      this.enquireSection.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
-}
 
   handleTrueClick(event: { flag: boolean; message: string }) {
     const origval = event.message || "";
