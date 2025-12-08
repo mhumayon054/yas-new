@@ -12,7 +12,7 @@
   background: white;
   padding: 30px;
   border-radius: 10px;
-  width: 80%;
+  width: 90%;
 }
 
 .heading {
@@ -24,6 +24,7 @@
   justify-content: center;
   margin-bottom: 20px;
   align-items: center;
+  gap: 20px;
 
   @media screen and (max-width: 767px) {
     gap: 10px;
@@ -41,7 +42,6 @@
     text-align: center;
     font-weight: bold;
     cursor: pointer;
-    margin-right: 10px;
     transition: 0.3s;
     max-width: 300px;
     min-height: 91px;
@@ -91,15 +91,14 @@
 .box {
   background-color: white;
   margin: 8px 0px;
-  padding: 15px;
-  padding-left: 45px;
+    padding: 20px;
   border-radius: 4px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   position: relative;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  gap: 7px;
+  // flex-direction: column;
+      gap: 12px;
   height: 100%;
 
    @media screen and (max-width: 767px) {
@@ -110,17 +109,19 @@
 .box.selected {
   border: 1px solid black;
   background: #ededed;
+      padding: 19px;
 }
 
 .box h3 {
-  font-size: 17px;
-  font-weight: bold;
+      font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
 }
 
 .box p {
   font-size: 14px;
   font-weight: 400;
-  width: 60%;
+  line-height: 30px;
 }
 
 .box input {
@@ -418,12 +419,12 @@
 .map iframe{width: inherit;
 height: inherit;
 outline: none;}
-.text{
-  display: flex; 
-  justify-content: space-between;
-   align-items: center;
-    width: 100%;
-}
+// .text{
+//   display: flex; 
+//   justify-content: space-between;
+//    align-items: center;
+//     width: 100%;
+// }
 @media (max-width: 480px) {
   .text{
     flex-direction: column;
@@ -450,7 +451,7 @@ outline: none;}
 
   .option {
     max-width: 100%;
-    width: 100%;
+    // width: 100%;
     margin-right: 0;
     margin-bottom: 10px;
   }

@@ -45,19 +45,26 @@
       <div *ngIf="currentStep === 1" class="category-options">
         <div class="step1" *ngFor="let cat of categories; let i = index">
           <div class="box" (click)="selectCategory(i)" [class.selected]="cat.selected">
-            <div style="display: flex; gap: 5px;"> <label class="circle-checkbox" (click)="$event.stopPropagation()">
-                <input type="checkbox" [(ngModel)]="cat.selected" />
-                <span></span>
-              </label>
+            <label class="circle-checkbox" (click)="$event.stopPropagation()">
+  <input
+    type="radio"
+    name="category"
+    [checked]="cat.selected"
+    (change)="selectCategory(i)"
+  />
+  <span></span>
+</label>
+
+            <div style="width: 100%;"> 
               <h3>{{ cat.title }}</h3>
-            </div>
-            <div class="text">
-              <p style="width: 80%;">
-                {{ cat.selected && inboutique ? cat.selectedDescription : cat.defaultDescription }}
-              </p>
-              <p style="text-align: end; width: 20%;">
-                {{ cat.selected && inboutique ? cat.phone : '' }}
-              </p>
+              <div class="text" style="display: flex; flex-direction: column;">
+                <p>
+                  {{ cat.selected && inboutique ? cat.selectedDescription : cat.defaultDescription }}
+                </p>
+                <p style="text-align: end; width: 20%;">
+                  {{ cat.selected && inboutique ? cat.phone : '' }}
+                </p>
+              </div>
             </div>
           </div>
 

@@ -31,6 +31,30 @@ html[lang^="ar"] .product-show .part-2 p span{
       word-spacing: 1px;
 }
 
+html[lang^="ar"] .COUTURE-Hover .collection{
+  padding: 0 0 0 45.54px !important;
+}
+
+// html[lang^="ar"] .bride-Hover .collection-book-now-parent{
+//   gap: 60px !important;
+// }
+html[lang^="ar"] .bride-Hover,
+html[lang^="ar"] .COUTURE-Hover {
+      @media screen and (max-width: 1024px) and (min-width: 768px) {
+        padding: 20px 20px 20px 0;
+    }
+}
+
+html[lang^="ar"] .logo-section {
+    padding: 62px 60px 0px 0;
+    width: 100%;
+}
+
+html[lang^="ar"] .footer-section {
+    width: 100%;
+    padding: 0 100px 0 0;
+}
+
 * {
   padding: 0;
   margin: 0;
