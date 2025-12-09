@@ -226,58 +226,97 @@
           </div>
         </div>
       </li>
-      <div
-        class="COUTURE-Hover"
-        *ngIf="showHover && run"
-        (mouseenter)="run && ShowandHideDetails('list1', true)"
+<div
+  class="COUTURE-Hover"
+  *ngIf="showHover && run"
+  (mouseenter)="run && ShowandHideDetails('list1', true)"
+>
+  <div class="collection-book-now-parent">
+    <div class="collection">
+      <h1 style="cursor: pointer">Collection</h1>
+
+      <!-- Existing -->
+      <p style="cursor: pointer" (click)="moveNext('SummerSpring')">
+        SPRING / SUMMER 24
+      </p>
+
+      <p style="cursor: pointer" (click)="moveNext('WinterFall')">
+        FALL / WINTER 23-24
+      </p>
+
+      <!-- ⭐ NEW: FALL / WINTER 25–26 -->
+      <p style="cursor: pointer" (click)="moveNext('WinterFall-2025-2026')">
+        FALL / WINTER 25-26
+      </p>
+    </div>
+
+    <div class="booknow">
+      <h1 style="cursor: pointer">BOOK NOW</h1>
+      <h1
+        style="
+          color: gray;
+          cursor: pointer;
+          font-size: 14px;
+          margin-top: 40px;
+          font-weight: 400;
+        "
+        (click)="moveNext('BookAppointment')"
       >
-        <div class="collection-book-now-parent">
-          <div class="collection">
-            <h1 style="cursor: pointer">Collection</h1>
-            <p style="cursor: pointer" (click)="moveNext('SummerSpring')">
-              SPRING / SUMMER 24
-            </p>
-            <p style="cursor: pointer" (click)="moveNext('WinterFall')">
-              FALL / WINTER 23-24
-            </p>
-          </div>
-          <div class="booknow">
-            <h1 style="cursor: pointer">BOOK NOW</h1>
-            <h1
-              style="
-                color: gray;
-                cursor: pointer;
-                font-size: 14px;
-                margin-top: 40px;
-                font-weight: 400;
-              "
-              (click)="moveNext('BookAppointment')"
-            >
-              book your appointment
-            </h1>
-          </div>
-        </div>
-        <div class="product">
-          <div class="cardOne" (click)="moveNext('SummerSpring')" style="cursor: pointer" >
-            <img src="https://ik.imagekit.io/5sbqruotr/summer-spring-300x450.webp" alt="" />
-            <p
-              style="cursor: pointer; font-weight: 700"
-              (click)="moveNext('SummerSpring')"
-            >
-              SPRING / SUMMER 24
-            </p>
-          </div>
-          <div class="cardTwo"  (click)="moveNext('WinterFall')" style="cursor: pointer">
-            <img src="https://ik.imagekit.io/5sbqruotr/fall-winter.webp" alt="" />
-            <p
-              style="cursor: pointer; font-weight: 700"
-              (click)="moveNext('WinterFall')"
-            >
-              FALL / WINTER 23-24
-            </p>
-          </div>
-        </div>
-      </div>
+        book your appointment
+      </h1>
+    </div>
+  </div>
+
+  <div class="product">
+
+    <!-- Existing card -->
+    <div
+      class="cardOne"
+      (click)="moveNext('SummerSpring')"
+      style="cursor: pointer"
+    >
+      <img
+        src="https://ik.imagekit.io/5sbqruotr/summer-spring-300x450.webp"
+        alt=""
+      />
+      <p style="cursor: pointer; font-weight: 700">
+        SPRING / SUMMER 24
+      </p>
+    </div>
+
+    <!-- Existing card -->
+    <div
+      class="cardTwo"
+      (click)="moveNext('WinterFall')"
+      style="cursor: pointer"
+    >
+      <img
+        src="https://ik.imagekit.io/5sbqruotr/fall-winter.webp"
+        alt=""
+      />
+      <p style="cursor: pointer; font-weight: 700">
+        FALL / WINTER 23-24
+      </p>
+    </div>
+
+    <!-- ⭐ NEW CARD: FALL / WINTER 25–26 -->
+    <div
+      class="cardTwo"
+      (click)="moveNext('WinterFall-2025-2026')"
+      style="cursor: pointer"
+    >
+      <img
+        src="https://ik.imagekit.io/5sbqruotr/looks/Look-7.1-768x1152.jpeg.webp"
+        alt=""
+      />
+      <p style="cursor: pointer; font-weight: 700">
+        FALL / WINTER 25-26
+      </p>
+    </div>
+
+  </div>
+</div>
+
       <div
         class="bride-Hover"
         *ngIf="showHover2&& run"

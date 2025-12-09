@@ -1,19 +1,25 @@
-import { Component, HostListener, type OnInit, ViewChild, ElementRef } from "@angular/core";
+import {
+  Component,
+  HostListener,
+  OnInit,
+  ViewChild,
+  ElementRef,
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 import { MainPage } from "../main-page/main-page";
 import { SliderFour } from "../slider-four/slider-four";
 import { Footer } from "../footer/footer";
-import { PageSix } from "../page-six/page-six";
+import { PageTen } from "../page-ten/page-ten"; // 🔥 FW 25–26 looks page
 
 @Component({
-  selector: "app-winterlooksshow",
+  selector: "app-winterlooksshow-25-26",
   standalone: true,
   imports: [CommonModule, MainPage, SliderFour, Footer],
-  templateUrl: "./winterlooksshow.html",
-  styleUrls: ["../looksshow/looksshow.scss"],
+  templateUrl: "./winterlooksshow25-26.html",
+  styleUrls: ["../looksshow/looksshow.scss"], // same styling reuse
 })
-export class WinterLooksshow implements OnInit {
+export class WinterLooksshow2526 implements OnInit {
   item: {
     allpictures: any[];
     pictures: string[];
@@ -24,10 +30,9 @@ export class WinterLooksshow implements OnInit {
   fullList: any[] = [];
   startIndex = 0;
 
-  // 👉 jo look abhi ENQUIRE NOW section ke slider me active hai
-  selectedIndex = 0;
+  selectedIndex = 0; // active look in ENQUIRE slider
 
-  @ViewChild('enquireSection') enquireSection!: ElementRef<HTMLDivElement>;
+  @ViewChild("enquireSection") enquireSection!: ElementRef<HTMLDivElement>;
 
   receivedImage = "";
   receivedText = "";
@@ -37,6 +42,7 @@ export class WinterLooksshow implements OnInit {
 
   heroVideoUrl =
     "https://ik.imagekit.io/ozrxwulka/FallWinterVideos/fw-hero.mp4?updatedAt=1758745273304";
+  // 👉 isko baad me FW 25–26 hero video se replace kar sakte ho
 
   filteredPictures: string[] = [];
 
@@ -48,12 +54,10 @@ export class WinterLooksshow implements OnInit {
       startIndex?: number;
     };
 
-    // list jo grid se aayi
     if (state?.fullList && state.fullList.length > 0) {
       this.fullList = state.fullList;
     }
 
-    // jis product pe click karke yahan aaye ho
     if (typeof state?.startIndex === "number") {
       this.startIndex = state.startIndex;
       this.selectedIndex = state.startIndex;
@@ -61,10 +65,10 @@ export class WinterLooksshow implements OnInit {
   }
 
   ngOnInit() {
-    // agar router state nahi mila to PageSix se load karo
+    // 🔥 agar router state se list na aaye to FW 25–26 looks (PageTen) se load karo
     if (!this.fullList.length) {
-      const pageSix = new PageSix();
-      this.fullList = pageSix.lookDatas;
+      const pageTen = new PageTen();
+      this.fullList = pageTen.lookDatas;
       this.selectedIndex = 0;
     }
 
@@ -74,30 +78,22 @@ export class WinterLooksshow implements OnInit {
       this.selectedIndex = 0;
     }
 
-    // ✅ shuru mein jis pe click karke aaye ho, use hi select karo
     this.updateSelectedLook(this.selectedIndex);
   }
 
-  // 👉 SINGLE SOURCE OF TRUTH – upar / neeche dono slider is se update hote hain
   private updateSelectedLook(index: number) {
     const newLook = this.fullList[index];
     if (!newLook) return;
 
     const pictures = this.getImages(newLook);
 
-    // 🔥 ab sirf current index (agar chaho to) hide kar sakte ho
     const allpictures = this.fullList.map((product: any, idx: number) => {
-      // agar neeche wale slider me current look bhi dikhana hai,
-      // to ye condition bhi hata sakte ho:
+      // agar neeche slider me current look ko hide karna hai:
       if (idx === index) {
         return { img: "", img2: "", name: "", text: "" };
       }
       return product;
     });
-
-    // agar current look bhi show karna hai neeche,
-    // to upar wali map ko simple aise karo:
-    // const allpictures = this.fullList;
 
     this.item = {
       allpictures,
@@ -106,7 +102,6 @@ export class WinterLooksshow implements OnInit {
       text: newLook.text || "",
     };
 
-    // upar wala main slider images
     this.filteredPictures = pictures;
 
     this.receivedImage = "";
@@ -119,11 +114,11 @@ export class WinterLooksshow implements OnInit {
   scrollToEnquire() {
     if (this.enquireSection?.nativeElement) {
       this.enquireSection.nativeElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }
 
@@ -140,9 +135,8 @@ export class WinterLooksshow implements OnInit {
     this.receivedText = origval.split(",").slice(1).join(",") || "";
   }
 
-  // 👉 neeche 4-slides slider se index aata hai
   onSliderIndexChange(index: number) {
-    if (!this.fullList || this.fullList.length === 0) return;
+    if (!this.fullList || !this.fullList.length) return;
     if (index < 0 || index >= this.fullList.length) return;
 
     this.selectedIndex = index;
