@@ -1,10 +1,313 @@
+/* ============================
+   ARABIC – DIN Next LT Arabic
+   ============================ */
+
+/* UltraLight (200) */
 @font-face {
-  font-family: 'DINNextArabicBold';
-  src: url('assets/ArbFONTS-DINNextLTArabic-Bold-2.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-UltraLight-1.ttf') format('truetype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
+
+/* Light (300) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNEXTLTARABIC-LIGHT-1.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regular (400) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-Regular-2.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-Medium-2.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-Bold-2.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Heavy (800) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-Heavy-1.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black (900) */
+@font-face {
+  font-family: 'DINNextLTArabic';
+  src: url('assets/fonts/ArbFONTS-DINNextLTArabic-Black-2.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================
+   DISPLAY – Laureen Zaza
+   ============================ */
+
+@font-face {
+  font-family: 'LaureenZazaDisplay';
+  src: url('assets/fonts/LaureenZazaDisplay-Smdisplay.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LaureenZazaDisplay';
+  src: url('assets/fonts/LaureenZazaDisplay-display.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LaureenZazaDisplay';
+  src: url('assets/fonts/LaureenZazaDisplay-Meddisplay.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LaureenZazaDisplay';
+  src: url('assets/fonts/LaureenZazaDisplay-Bddisplay.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================
+   SERIF – Bell
+   ============================ */
+
+@font-face {
+  font-family: 'Bell';
+  src: url('assets/fonts/BELL.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bell';
+  src: url('assets/fonts/BELLB.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bell';
+  src: url('assets/fonts/BELLI.TTF') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* ============================
+   SANS – Lato (FULL FAMILY)
+   ============================ */
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/fonts/Lato-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* ============================
+   GLOBAL RESET + BASE FONTS
+   ============================ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Default font – Arabic DIN as base */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  font-family: 'DINNextLTArabic', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Arabic mode (agar tum body.pe .arabic class lagate ho) */
+body.arabic {
+  font-family: 'DINNextLTArabic', sans-serif;
+}
+
+/* English text helpers – Lato */
+.yc-text-en {
+  font-family: 'Lato', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.yc-text-light {
+  font-family: 'Lato', system-ui, sans-serif;
+  font-weight: 300;
+}
+
+.yc-text-bold {
+  font-family: 'Lato', system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Couture headings – Laureen Zaza Display */
+.yc-heading {
+  font-family: 'LaureenZazaDisplay', "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.yc-heading--bold {
+  font-family: 'LaureenZazaDisplay', "Times New Roman", serif;
+  font-weight: 700;
+}
+
+/* Buttons / labels – Lato Black */
+.yc-button-text {
+  font-family: 'Lato', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Optional editorial serif – Bell */
+.yc-editorial {
+  font-family: 'Bell', "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.yc-editorial--bold {
+  font-family: 'Bell', "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.yc-editorial--italic {
+  font-family: 'Bell', "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* ============================
+   WEGLOT
+   ============================ */
+
+.weglot-container {
+  display: none !important;
+}
+
+
+/* ============================
+   RTL / ARABIC LAYOUT TWEAKS
+   (tumhara existing code, cleaned)
+   ============================ */
 
 html[lang^="ar"] .COUTURE-Hover .collection p,
 html[lang^="ar"] .COUTURE-Hover .collection h1,
@@ -19,60 +322,42 @@ html[lang^="ar"] .bride-Hover .booknow h1 {
   direction: rtl;
 }
 
-html[lang^="ar"] .bride-Hover .collection h1{
+html[lang^="ar"] .bride-Hover .collection h1 {
   margin-right: 0 !important;
 }
 
-html[lang^="ar"] .COUTURE-Hover .collection h1{
+html[lang^="ar"] .COUTURE-Hover .collection h1 {
   margin-right: 0 !important;
 }
 
-html[lang^="ar"] .product-show .part-2 p span{
-      word-spacing: 1px;
+html[lang^="ar"] .product-show .part-2 p span {
+  word-spacing: 1px;
 }
 
-html[lang^="ar"] .COUTURE-Hover .collection{
+html[lang^="ar"] .COUTURE-Hover .collection {
   padding: 0 0 0 45.54px !important;
 }
 
-// html[lang^="ar"] .bride-Hover .collection-book-now-parent{
-//   gap: 60px !important;
-// }
-html[lang^="ar"] .bride-Hover,
-html[lang^="ar"] .COUTURE-Hover {
-      @media screen and (max-width: 1024px) and (min-width: 768px) {
-        padding: 20px 20px 20px 0;
-    }
+/* 
+html[lang^="ar"] .bride-Hover .collection-book-now-parent {
+  gap: 60px !important;
 }
+*/
 
 html[lang^="ar"] .logo-section {
-    padding: 62px 60px 0px 0;
-    width: 100%;
+  padding: 62px 60px 0px 0;
+  width: 100%;
 }
 
 html[lang^="ar"] .footer-section {
-    width: 100%;
-    padding: 0 100px 0 0;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'MyCustomFont', Arial, sans-serif;
-}
-
-html, body {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  scroll-behavior: smooth;
+  padding: 0 100px 0 0;
 }
 
-.weglot-container {
-  display: none !important;
-}
-
-body.arabic {
-  font-family: 'DINNextArabicBold', sans-serif;
+/* Tablet RTL padding fix */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  html[lang^="ar"] .bride-Hover,
+  html[lang^="ar"] .COUTURE-Hover {
+    padding: 20px 20px 20px 0;
+  }
 }

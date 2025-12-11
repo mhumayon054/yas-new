@@ -8,42 +8,43 @@
     <div class="product-show" *ngIf="item">
       <div class="part-1">
         <div class="boxShow">efes</div>
-        <div class="slider">
-          <div
-            class="slides"
-            [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
-          >
-            <div class="slide" *ngFor="let pic of filteredPictures">
-              <div
-                class="img-wrapper"
-                (mouseenter)="zoomIn($event)"
-                (mousemove)="zoomMove($event)"
-                (mouseleave)="zoomOut($event)"
-              >
-                <img
-                  [src]="receivedImage || pic"
-                  alt="Slide Image"
-                  class="zoom-img"
-                />
-              </div>
-            </div>
-          </div>
+       <div class="slider" dir="ltr">
+  <div
+    class="slides"
+    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+  >
+    <div class="slide" *ngFor="let pic of filteredPictures">
+      <div
+        class="img-wrapper"
+        (mouseenter)="zoomIn($event)"
+        (mousemove)="zoomMove($event)"
+        (mouseleave)="zoomOut($event)"
+      >
+        <img
+          [src]="receivedImage || pic"
+          alt="Slide Image"
+          class="zoom-img"
+        />
+      </div>
+    </div>
+  </div>
 
-          <button
-            class="nav prev"
-            *ngIf="filteredPictures.length > 1 && !receivedImage"
-            (click)="moveSlide(-1)"
-          >
-            ←
-          </button>
-          <button
-            class="nav next"
-            *ngIf="filteredPictures.length > 1 && !receivedImage"
-            (click)="moveSlide(1)"
-          >
-            →
-          </button>
-        </div>
+  <button
+    class="nav prev"
+    *ngIf="filteredPictures.length > 1 && !receivedImage"
+    (click)="moveSlide(-1)"
+  >
+    ←
+  </button>
+  <button
+    class="nav next"
+    *ngIf="filteredPictures.length > 1 && !receivedImage"
+    (click)="moveSlide(1)"
+  >
+    →
+  </button>
+</div>
+
       </div>
 
       <div class="part-2">

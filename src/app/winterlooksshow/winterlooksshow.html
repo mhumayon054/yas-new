@@ -8,7 +8,7 @@
     <div class="product-show" *ngIf="item">
       <div class="part-1">
         <div class="boxShow">efes</div>
-        <div class="slider">
+        <div class="slider" dir="ltr">
           <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
             <div class="slide" *ngFor="let pic of filteredPictures">
               <div class="img-wrapper" (mouseenter)="zoomIn($event)" (mousemove)="zoomMove($event)"
