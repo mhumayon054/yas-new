@@ -10,6 +10,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Video } from "../video/video";
+import { HeroVideoService } from '../services/hero-video.service';
 
 declare var Weglot: any;
 
@@ -22,14 +23,37 @@ declare var Weglot: any;
 })
 export class MainPage implements AfterViewInit, OnInit {
   isBookAppointmentPage: boolean = false;
+
   @ViewChild('myVideo', { static: false }) myVideo!: ElementRef<HTMLVideoElement>;
-  // @Input() videoElement: string =
-  //   "https://res.cloudinary.com/dzit141xn/video/upload/v1758726273/Teaser_1_FC_nzlxpd.mp4";
 
-  @Input() videoElement: string = '';
-    defaultVideo = 'https://ik.imagekit.io/ozrxwulka/FallWinterVideos/fw-hero.mp4?updatedAt=1758745273304';
+  // ✅ Input se aane wali video (agar koi page bhej raha ho)
+  private _inputVideo: string = '';
 
-  constructor(private router: Router) {}
+  @Input() set videoElement(value: string) {
+    this._inputVideo = value || '';
+    this.updateVideoSource();
+  }
+  get videoElement(): string {
+    return this._inputVideo;
+  }
+
+  // ✅ Default hero video (home / normal pages)
+  defaultVideo: string =
+    'https://ik.imagekit.io/ozrxwulka/FallWinterVideos/fw-hero.mp4?updatedAt=1758745273304';
+
+  // ✅ Service se aane wali hero video (jaise WinterLook25–26)
+  private serviceVideo: string | null = null;
+
+  // ✅ Ye hi actual <source [src]> me use hoga
+  currentVideoSrc: string = this.defaultVideo;
+
+  // Agar service se URL aaye before <video> ready
+  private pendingVideoSrc: string | null = null;
+
+  constructor(
+    private router: Router,
+    private heroVideoService: HeroVideoService
+  ) {}
 
   sidebarOneOpen = false;
   sidebarTwoOpen = false;
@@ -66,12 +90,21 @@ export class MainPage implements AfterViewInit, OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.urlAfterRedirects;
-        // console.log("Current Route:", this.currentRoute);
       }
     });
-  this.router.events.subscribe(() => {
+
+    this.router.events.subscribe(() => {
       this.isBookAppointmentPage = this.router.url.includes('BookAppointment');
     });
+
+    // ✅ HeroVideoService se video listen karo (sirf un pages ke liye jo service use karte hain)
+    this.heroVideoService.video$.subscribe((url: string | null) => {
+      this.serviceVideo = url;
+      this.updateVideoSource();
+    });
+
+    // Initial state
+    this.updateVideoSource();
   }
 
   @HostListener('window:resize')
@@ -81,25 +114,19 @@ export class MainPage implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    // ✅ video autoplay setup
-    if (this.myVideo) {
-      const video = this.myVideo.nativeElement;
-      video.muted = true;
-      video.autoplay = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.load();
-      video.play().catch(() => {});
-      const videoSrc = this.videoElement || this.defaultVideo;
-    this.myVideo.nativeElement.src = videoSrc;
-    }
+    // ✅ Jab <video> ready ho jaye to currentVideoSrc apply kar do
+    const initialSrc = this.pendingVideoSrc || this.currentVideoSrc;
+    this.applyVideoToElement(initialSrc);
 
     // ✅ wait for Weglot to load properly
     setTimeout(() => {
       if (typeof Weglot !== 'undefined') {
         const currentLang = Weglot?.getCurrentLang?.() || 'en';
         Weglot.switchTo(currentLang);
-        document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute(
+          'dir',
+          currentLang === 'ar' ? 'rtl' : 'ltr'
+        );
         this.selectedLanguage = currentLang;
 
         if (Weglot.refresh) {
@@ -113,18 +140,52 @@ export class MainPage implements AfterViewInit, OnInit {
       Weglot.on('languageChanged', (newLang: string) => {
         if (newLang === 'en' || newLang === 'ar') {
           this.selectedLanguage = newLang;
-          document.documentElement.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+          document.documentElement.setAttribute(
+            'dir',
+            newLang === 'ar' ? 'rtl' : 'ltr'
+          );
         }
         this.languageDropdownOpen = false;
       });
     }
   }
 
-  onSpotLightClick() {
-  if (this.run) {
-    this.moveNext('SpotLight');
+  // ✅ Decide final video source: Input > Service > Default
+  private updateVideoSource() {
+    const finalSrc =
+      this._inputVideo || this.serviceVideo || this.defaultVideo;
+
+    this.currentVideoSrc = finalSrc;
+    this.pendingVideoSrc = finalSrc;
+
+    if (this.myVideo?.nativeElement) {
+      this.applyVideoToElement(finalSrc);
+    }
   }
-}
+
+  // ✅ actual video element pe apply
+  private applyVideoToElement(src: string) {
+    if (!this.myVideo?.nativeElement) return;
+
+    const video = this.myVideo.nativeElement;
+    video.src = src;
+    video.muted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.load();
+    video
+      .play()
+      .catch(() => {
+        // autoplay fail ho jaye to ignore
+      });
+  }
+
+  onSpotLightClick() {
+    if (this.run) {
+      this.moveNext('SpotLight');
+    }
+  }
 
   // sidebars
   openSidebarOne() {
@@ -170,9 +231,15 @@ export class MainPage implements AfterViewInit, OnInit {
   }
 
   switchLanguage(lang: 'en' | 'ar') {
-    if (typeof Weglot !== 'undefined' && typeof Weglot.switchTo === 'function') {
+    if (
+      typeof Weglot !== 'undefined' &&
+      typeof Weglot.switchTo === 'function'
+    ) {
       Weglot.switchTo(lang);
-      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute(
+        'dir',
+        lang === 'ar' ? 'rtl' : 'ltr'
+      );
       this.setLanguage(lang);
 
       if (Weglot.refresh) {

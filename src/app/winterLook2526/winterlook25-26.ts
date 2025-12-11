@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, OnDestroy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
+import { HeroVideoService } from "../services/hero-video.service";
 
 @Component({
   selector: "app-winterlook-25-26",
@@ -9,8 +10,17 @@ import { Router } from "@angular/router";
   templateUrl: "./winterlook25-26.html",
   styleUrls: ["./winterlook25-26.scss"],
 })
-export class WinterLook2526 implements OnInit {
-  constructor(private router: Router) {}
+export class WinterLook2526 implements OnInit, OnDestroy {
+  constructor(
+    private router: Router,
+    private heroVideoService: HeroVideoService
+  ) {}
+
+  // ✅ Is page ke liye Bunny hero video
+  private readonly heroVideoUrl: string =
+    "https://yas-videos-cdn.b-cdn.net/wintervideos%20-2025-2026/header%20of%20both%20home%20page%20and%20fall%20winter%202025_2026%20page%20.mp4";
+  // ↑ yeh tumhara abhi ka real URL hai. Agar baad me Bunny me filename rename karo
+  // to yahan bhi update kar lena.
 
   @Input() lookData: {
     name: string;
@@ -23,6 +33,9 @@ export class WinterLook2526 implements OnInit {
   allPictures: any[] = [];
 
   ngOnInit() {
+    // ✅ Is route per aate hi hero video Bunny wali kar do
+    this.heroVideoService.setVideo(this.heroVideoUrl);
+
     this.allPictures = [];
     this.lookData.forEach((product, index) => {
       if (index !== 7 && index !== 13) {
@@ -34,6 +47,11 @@ export class WinterLook2526 implements OnInit {
         });
       }
     });
+  }
+
+  ngOnDestroy() {
+    // ✅ Is page se nikalte hi hero wapas default pe
+    this.heroVideoService.setVideo(null);
   }
 
   showLookDetails(

@@ -41,8 +41,7 @@ export class WinterLooksshow2526 implements OnInit {
   hide = false;
 
   heroVideoUrl =
-    "https://ik.imagekit.io/ozrxwulka/FallWinterVideos/fw-hero.mp4?updatedAt=1758745273304";
-  // 👉 isko baad me FW 25–26 hero video se replace kar sakte ho
+    "https://yas-videos-cdn.b-cdn.net/wintervideos%20-2025-2026/header%20of%20both%20home%20page%20and%20fall%20winter%202025_2026%20page%20.mp4";
 
   filteredPictures: string[] = [];
 
