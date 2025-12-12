@@ -38,6 +38,27 @@
     </div>
   </div>
 
+  <div class="partFour">
+    <!-- LEFT: TEXT -->
+    <div class="partFour-left" style="display: flex; align-items: center;">
+      <div class="spring-summer-section" style="margin-left: 3vw;">
+        <h1 style="font-family: MyCustomFont;">FALL / WINTER 25–26</h1>
+        <p>
+          Discover a realm of elegance shaped by time and enriched with couture mastery in
+          Yas Couture’s Fall/Winter 2025–2026 collection. Each creation is crafted with
+          sculptural beauty, luxurious materials, and exquisite detailing that bring a
+          new dimension of sophistication to the season.
+        </p>
+        <button (click)="moveNext('WinterFall-2025-2026')">DISCOVER MORE</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: SLIDER -->
+    <div class="partFour-right">
+      <app-silder [images]="imagesFall2526"></app-silder>
+    </div>
+  </div>
+
   <div class="pageFour">
     <div class="pageFour-top">
       <h1 style="text-transform: uppercase;">Bridal COLLECTION</h1>

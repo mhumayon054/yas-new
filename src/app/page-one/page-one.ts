@@ -233,6 +233,13 @@ export class PageOne {
     "https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1581-1-scaled.jpg.webp",
   ]
 
+  imagesFall2526 = [
+    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2024.tif', 
+    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2025.tif', 
+    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2026.tif', 
+    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2027.tif', 
+  ];
+
   moveNext(id: string) {
     this.route.navigate([id])
   }
