@@ -233,12 +233,31 @@ export class PageOne {
     "https://ik.imagekit.io/5sbqruotr/bridalCollectionHome/3C8A1581-1-scaled.jpg.webp",
   ]
 
-  imagesFall2526 = [
-    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2024.tif', 
-    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2025.tif', 
-    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2026.tif', 
-    'https://ik.imagekit.io/5sbqruotr/springfallImagesHome/Look%2027.tif', 
-  ];
+imagesFall2526 = [
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%201.1.jpg?updatedAt=1765288732356',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%202.1.jpg?updatedAt=1765288701262',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%203.1.jpg?updatedAt=1765288677889',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%204.1.jpg?updatedAt=1765288742404',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%205.1.jpg?updatedAt=1765288736671',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%206.1.jpg?updatedAt=1765288741942',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%207.1.jpg?updatedAt=1765288709249',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%208.1.jpg?updatedAt=1765288723648',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%209.1.jpg?updatedAt=1765288753272',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2010.1.jpg?updatedAt=1765288740136',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2011.1.jpg?updatedAt=1765288731254',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2012.1.jpg?updatedAt=1765288721694',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2013.1.jpg?updatedAt=1765288738291',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2014.1.jpg?updatedAt=1765288732058',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2015.1.jpg?updatedAt=1765288715678',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2016.jpg?updatedAt=1765288732581',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2017.1.jpg?updatedAt=1765288745924',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2018.jpg?updatedAt=1765288717863',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2019.jpg?updatedAt=1765288721062',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2020.1.jpg?updatedAt=1765288750342',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2021.1.jpg?updatedAt=1765288729556',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2022.1.jpg?updatedAt=1765288696789',
+  'https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%2023.1.jpg?updatedAt=1765288732461'
+];
 
   moveNext(id: string) {
     this.route.navigate([id])
