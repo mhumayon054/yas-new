@@ -3,41 +3,7 @@
     <app-main-page videoElement="https://yas-videos-cdn.b-cdn.net/wintervideos%20-2025-2026/header%20of%20both%20home%20page%20and%20fall%20winter%202025_2026%20page%20.mp4"></app-main-page>
   </div>
 
-  <div class="partTwo">
-    <div class="partTwo-left">
-      <div class="spring-summer-section">
-        <h1 style="font-family: MyCustomFont;">SPRING / SUMMER</h1>
-        <p>
-          Discover a world of elegance and sophistication with Yas Couture’s Spring-Summer 2024 haute couture
-          collection.
-          Each design is a masterpiece of artistry, celebrating the beauty of nature with luxurious fabrics and
-          impeccable craftsmanship.
-        </p>
-        <button (click)="moveNext('SummerSpring')">DISCOVER MORE</button>
-      </div>
-    </div>
-    <div class="partTwo-right">
-      <app-silder [images]="images2"></app-silder>
-    </div>
-  </div>
-
-  <div class="partThree">
-    <div class="partThree-right">
-      <app-silder [images]="imageswinter"></app-silder>
-    </div>
-    <div class="partThree-left" style="display: flex; align-items: center;">
-      <div class="spring-summer-section" style="margin-right: 3vw;">
-        <h1 style="font-family: MyCustomFont;">FALL / WINTER</h1>
-        <p>
-          Indulge in sophistication with our Fall / Winter 23-24 curated couture selection. Each piece radiates luxury
-          and refinement, crafted to elevate your style effortlessly. Explore our premium picks and embrace the epitome
-          of couture excellence.
-        </p>
-        <button (click)="moveNext('WinterFall')">DISCOVER MORE</button>
-      </div>
-    </div>
-  </div>
-
+  
   <div class="partFour">
     <!-- LEFT: TEXT -->
     <div class="partFour-left" style="display: flex; align-items: center;">
@@ -58,6 +24,41 @@
       <app-silder [images]="imagesFall2526"></app-silder>
     </div>
   </div>
+
+  <div class="partTwo">
+    <div class="partTwo-left">
+      <app-silder [images]="images2"></app-silder>
+    </div>
+    <div class="partTwo-right">
+      <div class="spring-summer-section">
+        <h1 style="font-family: MyCustomFont;">SPRING / SUMMER</h1>
+        <p>
+          Discover a world of elegance and sophistication with Yas Couture’s Spring-Summer 2024 haute couture
+          collection.
+          Each design is a masterpiece of artistry, celebrating the beauty of nature with luxurious fabrics and
+          impeccable craftsmanship.
+        </p>
+        <button (click)="moveNext('SummerSpring')">DISCOVER MORE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="partThree">
+    <div class="partThree-right">
+      <app-silder [images]="imageswinter"></app-silder>
+    </div>
+    <div class="partThree-left" style="display: flex; align-items: center;">
+      <div class="spring-summer-section" style="margin-right: 3vw;">
+        <h1 style="font-family: MyCustomFont;">FALL / WINTER</h1>
+        <p>
+          Indulge in sophistication with our Fall / Winter 23-24 curated couture selection. Each piece radiates luxury
+          and refinement, crafted to elevate your style effortlessly. Explore our premium picks and embrace the epitome
+          of couture excellence.
+        </p>
+        <button (click)="moveNext('WinterFall')">DISCOVER MORE</button>
+      </div>
+    </div>
+  </div> -->
 
   <div class="pageFour">
     <div class="pageFour-top">

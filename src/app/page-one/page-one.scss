@@ -55,17 +55,17 @@ h1{
 
 
 .partTwo-left {
-  width: 35%;
+      width: 55%;
   height: 100%;
-  display: flex;
+    display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .partTwo-right{
-  width: 65%;
+  width: 35%;
   height: 100%;
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,7 @@ h1{
 
 .spring-summer-section {
   // margin-top: 8vw;
-  margin-left: 3vw;
+  margin-right: 3vw;
   max-width: 90vw;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -129,7 +129,7 @@ h1{
   color: #fff;
 }
 
-.partTwo-right, .pageFour-mid, .pageFive-bottom {
+ .pageFour-mid, .pageFive-bottom {
   width: 55%;
   height: 100%;
   position: relative;

@@ -235,6 +235,11 @@
     <div class="collection">
       <h1 style="cursor: pointer">Collection</h1>
 
+      <!-- ⭐ NEW: FALL / WINTER 25–26 -->
+      <p style="cursor: pointer" (click)="moveNext('WinterFall-2025-2026')">
+        FALL / WINTER 25–26
+      </p>
+
       <!-- Existing -->
       <p style="cursor: pointer" (click)="moveNext('SummerSpring')">
         SPRING / SUMMER 24
@@ -244,10 +249,6 @@
         FALL / WINTER 23-24
       </p>
 
-      <!-- ⭐ NEW: FALL / WINTER 25–26 -->
-      <p style="cursor: pointer" (click)="moveNext('WinterFall-2025-2026')">
-        FALL / WINTER 25–26
-      </p>
     </div>
 
     <div class="booknow">
@@ -269,6 +270,22 @@
 
   <div class="product">
 
+    
+    <!-- ⭐ NEW CARD: FALL / WINTER 25–26 -->
+    <div
+      class="cardTwo"
+      (click)="moveNext('WinterFall-2025-2026')"
+      style="cursor: pointer"
+    >
+      <img
+        src="https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%201.1.jpg?updatedAt=1765288732356"
+        alt=""
+      />
+      <p style="cursor: pointer; font-weight: 700">
+        FALL / WINTER 25–26
+      </p>
+    </div>
+
     <!-- Existing card -->
     <div
       class="cardOne"
@@ -285,7 +302,7 @@
     </div>
 
     <!-- Existing card -->
-    <div
+    <!-- <div
       class="cardTwo"
       (click)="moveNext('WinterFall')"
       style="cursor: pointer"
@@ -297,22 +314,8 @@
       <p style="cursor: pointer; font-weight: 700">
         FALL / WINTER 23-24
       </p>
-    </div>
+    </div> -->
 
-    <!-- ⭐ NEW CARD: FALL / WINTER 25–26 -->
-    <div
-      class="cardTwo"
-      (click)="moveNext('WinterFall-2025-2026')"
-      style="cursor: pointer"
-    >
-      <img
-        src="https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%201.1.jpg?updatedAt=1765288732356"
-        alt=""
-      />
-      <p style="cursor: pointer; font-weight: 700">
-        FALL / WINTER 25–26
-      </p>
-    </div>
 
   </div>
 </div>
