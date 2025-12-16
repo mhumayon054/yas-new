@@ -26,7 +26,6 @@ export class MainPage implements AfterViewInit, OnInit {
 
   @ViewChild('myVideo', { static: false }) myVideo!: ElementRef<HTMLVideoElement>;
 
-  // ✅ Input se aane wali video (agar koi page bhej raha ho)
   private _inputVideo: string = '';
 
   @Input() set videoElement(value: string) {
