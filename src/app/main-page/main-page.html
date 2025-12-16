@@ -61,16 +61,16 @@
               Collection
             </h1>
             <p
+              (click)="moveNext('WinterFall-2025-2026')"
+              style="color: grey; font-size: 14px; text-align: center;"
+            >
+              FALL / WINTER 25-26
+            </p>
+            <p
               (click)="moveNext('SummerSpring')"
               style="color: grey; font-size: 14px"
             >
               SPRING / SUMMER 24
-            </p>
-            <p
-              (click)="moveNext('WinterFall')"
-              style="color: grey; font-size: 14px"
-            >
-              FALL / WINTER 23-24
             </p>
           </div>
           <div class="booknow">
@@ -83,18 +83,26 @@
             </h1>
           </div>
           <div class="product">
+             <div
+      class="cardTwo"
+      (click)="moveNext('WinterFall-2025-2026')"
+      style="cursor: pointer"
+    >
+      <img
+        src="https://ik.imagekit.io/5sbqruotr/Fall%20Winter%20Images%20-2025-2026/LOOK%201.1.jpg?updatedAt=1765288732356"
+        alt=""
+      />
+      <p style="cursor: pointer; font-weight: 700">
+        FALL / WINTER 25–26
+      </p>
+    </div>
             <div class="cardOne">
               <img src="https://ik.imagekit.io/5sbqruotr/summer-spring-300x450.webp" alt="" />
               <p style="font-weight: 700">
                 SPRING / SUMMER 24
               </p>
             </div>
-            <div class="cardTwo">
-              <img src="https://ik.imagekit.io/5sbqruotr/fall-winter.webp" alt="" />
-              <p style="font-weight: 700">
-                FALL / WINTER 23-24
-              </p>
-            </div>
+           
           </div>
         </div>
       </li>
